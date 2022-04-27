@@ -1,0 +1,30 @@
+{
+  "name": "bitcoinpricecheck",
+  "version": "1.0.0",
+  "description": "BitCoin Price Checker",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.27.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawsashimi1604/BitcoinPriceCheck.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "price",
+    "check"
+  ],
+  "author": "rawsashimi1604",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rawsashimi1604/BitcoinPriceCheck/issues"
+  },
+  "homepage": "https://github.com/rawsashimi1604/BitcoinPriceCheck#readme"
+}
