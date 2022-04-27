@@ -1,16 +1,19 @@
 const dataButton = document.getElementById("data-button");
 const tableSection = document.querySelector(".tables");
 
-let btnState = false;
+// True => show
+let btnState = true;
 
 dataButton.addEventListener("click", () => {
     btnState = !btnState;
+    // tableSection.classList.toggle("hide");
+    tableSection.classList.toggle("fade-active");
 
     if (btnState) {
-        tableSection.classList.remove("hide");
         dataButton.textContent = "Hide Data Symbols";
+
     } else {
-        tableSection.classList.add("hide");
         dataButton.textContent = "Show Data Symbols";
+
     }
 })
