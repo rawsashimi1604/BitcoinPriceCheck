@@ -29,6 +29,7 @@ app.get("/", async (req, res) => {
     const currPrice = await coinbase.getPrice("BTC", "USD")
 
     const data = {
+        "success": true,
         "coin": "BTC",
         "curr": "USD",
         "price": currPrice,
@@ -45,15 +46,33 @@ app.post("/", async (req, res) => {
     const currPrice = await coinbase.getPrice(req.body.coin, req.body.curr)
     console.log(`${req.body.coin + req.body.curr}: ${currPrice}`);
 
-    const data = {
-        "coin": req.body.coin,
-        "curr": req.body.curr,
-        "price": currPrice,
-        "allCurrencies": currencies,
-        "allFiat": fiat,
-    }
+    if (currPrice) {
+        const data = {
+            "success": true,
+            "coin": req.body.coin,
+            "curr": req.body.curr,
+            "price": currPrice,
+            "allCurrencies": currencies,
+            "allFiat": fiat,
+        }
+    
+        res.render("index.ejs", data)
+    } else {
 
-    res.render("index.ejs", data)
+        const currPrice = await coinbase.getPrice("BTC", "USD")
+
+        const data = {
+            "success": false,
+            "coin": "BTC",
+            "curr": "USD",
+            "price": currPrice,
+            "allCurrencies": currencies,
+            "allFiat": fiat,
+        }
+
+        res.render("index.ejs", data)
+    }
+    
 })
 
 app.listen(PORT, () => {

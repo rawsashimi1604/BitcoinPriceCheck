@@ -19,6 +19,9 @@
 </head>
 <body>
     <main>
+
+       
+
         <div class="bitcoin-price-check">
             <header>
                 <h1>Crypto Price Check</h1>
@@ -92,5 +95,11 @@
     </main>
 
     <script src="tables.js"></script>
+
+    <% if (!success) { %>
+        <script>
+            alert("Failed to get price, please check your inputs.")
+        </script>
+    <% } %>
 </body>
 </html>

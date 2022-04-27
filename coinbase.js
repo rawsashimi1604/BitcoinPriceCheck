@@ -9,6 +9,8 @@ async function getPrice(coin, fiat) {
     return axios.get(url).then(resp => resp.data).then(resp => {
         rates = resp.data.rates;
         return parseFloat(rates[fiat]).toFixed(2);
+    }).catch(err => {
+        return null;
     })
 }
 

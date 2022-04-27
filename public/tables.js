@@ -14,6 +14,5 @@ dataButton.addEventListener("click", () => {
 
     } else {
         dataButton.textContent = "Show Data Symbols";
-
     }
 })
