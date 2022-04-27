@@ -21,46 +21,52 @@
     <main>
         <div class="bitcoin-price-check">
             <header>
-                <h1>Bitcoin Price Check</h1>
+                <h1>Crypto Price Check</h1>
                 <i class="fa-brands fa-bitcoin"></i>
             </header>
             
-            <form>
-                <div>
-                    <label for="coin">Coin:</label>
-                    <input type="text" name="coin" id="coin">
-                </div>
+            <div class="main-wrapper">
+                <section>
+                    <form id="get-price-form" method="post">
+                        <div>
+                            <label for="coin">Coin:</label>
+                            <input type="text" name="coin" id="coin" placeholder="<%= coin %>">
+                        </div>
+                        
+                        <div>
+                            <label for="curr">Currency:</label>
+                            <input type="text" name="curr" id="curr" placeholder="<%= curr %>">
+                        </div>
+        
+                        <input type="submit" value="Get Price">
+                    </form>
+                </section>
                 
-                <div>
-                    <label for="curr">Currency:</label>
-                    <input type="text" name="curr" id="curr">
-                </div>
-
-                <input type="submit" value="Get Price">
-            </form>
-
-            <div class="price-container">
-                <span class="price-label">BTCUSD</span>
-                <h2 class="price">$50000.00</h2>
+    
+                <section class="price-container">
+                    <span class="price-label"><%= coin + curr %></span>
+                    <h2 class="price"><%= price %> <%= curr %></h2>
+                </section>
             </div>
-
-            <button id="data-button">Hide Data Symbols</button>
             
-            <section class="tables fade-inactive">
+
+            <button id="data-button">Show Data Symbols</button>
+            
+            <section class="tables fade-inactive fade-active">
                 <!-- Coin Table -->
                 <table>
                     <tr>
                       <th>Code</th>
                       <th>Coin</th>
                     </tr>
-                    <tr>
-                      <td>BTC</td>
-                      <td>Bitcoin</td>
-                    </tr>
-                    <tr>
-                      <td>ETH</td>
-                      <td>Ethereum</td>
-                    </tr>
+                    <% for (let i  = 0; i < allCurrencies.length; i++) { %>
+                        <% if (allCurrencies[i].details.type === "crypto") { %>
+                            <tr>
+                                <td><%= allCurrencies[i].id %></td>
+                                <td><%= allCurrencies[i].name %></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
                 </table>
 
                 <!-- Currency table -->
@@ -69,19 +75,15 @@
                       <th>Code</th>
                       <th>Currency</th>
                     </tr>
-                    <tr>
-                      <td>USD</td>
-                      <td>US Dollar</td>
-                    </tr>
-                    <tr>
-                      <td>SGD</td>
-                      <td>Singapore Dollar</td>
-                    </tr>
+                    <% for (let i  = 0; i < allFiat.length; i++) { %>
+                        <tr>
+                            <td><%= allFiat[i].id %></td>
+                            <td><%= allFiat[i].name %></td>
+                        </tr>
+                    <% } %>
                 </table>
             </section>
             
-            
-
             <footer>
                 <span>Developed using the Coinbase API.</span>
                 <a href="https://github.com/rawsashimi1604/BitcoinPriceCheck">Github</a>

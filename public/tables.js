@@ -2,7 +2,7 @@ const dataButton = document.getElementById("data-button");
 const tableSection = document.querySelector(".tables");
 
 // True => show
-let btnState = true;
+let btnState = false;
 
 dataButton.addEventListener("click", () => {
     btnState = !btnState;
