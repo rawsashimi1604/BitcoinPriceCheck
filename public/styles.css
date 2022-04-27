@@ -1,3 +1,173 @@
-h1 {
-    color: red;
+:root {
+    --color-900: #27241D;
+    --color-800: #423D33;
+    --color-700: #504A40;
+    --color-600: #625D52;
+    --color-500: #857F72;
+    --color-400: #A39E93;
+    --color-300: #B8B2A7;
+    --color-200: #D3CEC4;
+    --color-100: #E8E6E1;
+    --color-50: #FAF9F7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-900);
+    font-family: Poppins;
+}
+
+.bitcoin-price-check {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+    background-color: var(--color-800);
+    color: var(--color-100);
+
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 1px var(--color-600);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    display: inline;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--color-50);
+    text-shadow: var(--color-200) 1px 0 15px;
+}
+
+header i {
+    font-size: 40px;
+    color: var(--color-900);
+    text-shadow: 0px 0px 15px var(--color-400); 
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+form input[type=text] {
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+
+    background-color: var(--color-500);
+    color: var(--color-100);
+    
+    font-family: Poppins;
+    font-weight: 400;
+    text-indent: 4px;
+
+    border: 0.5px solid var(--color-300);
+}
+
+form input[type=submit] {
+
+    width: 30%;
+    cursor: pointer;
+    font-family: Poppins;
+    
+    background-color: #00897B;
+    color: var(--color-100);
+    
+
+    border: none;
+
+    padding: 5px;
+    border-radius: 10px;
+
+    margin-top: 15px;
+    transition: 0.5s;
+}
+
+form input[type=submit]:hover {
+    background-color: var(--color-400);
+    color: var(--color-800);
+    box-shadow: 0px 0px 5px 0.5px var(--color-300);
+}
+
+.bitcoin-price-check label{
+    display: block;
+}
+
+.price-container {
+    margin-top: 20px;
+}
+
+.price-label {
+    color: var(--color-500);
+
+    position: absolute;
+
+}
+
+.price {
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: var(--color-500);
+    color: var(--color-900);
+    text-align: center;
+    border: 1px solid var(--color-800);
+    width: 48%;
+    font-size: 14px;
+}
+
+.tables th, td {
+    border: 1px solid var(--color-800);
+}
+
+td:not(:first-child) {
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-right:3px;       
+  }
+
+footer {
+    margin-top: 10px;
+}
+
+footer span, a {
+    display:block;
+    color: var(--color-400);
+    font-size: 11px;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--color-200);
 }

@@ -6,9 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <h1>Hello world</h1>
+    <main>
+        <div class="bitcoin-price-check">
+            <header>
+                <h1>Bitcoin Price Check</h1>
+                <i class="fa-brands fa-bitcoin"></i>
+            </header>
+            
+            <form>
+                <div>
+                    <label for="coin">Coin:</label>
+                    <input type="text" name="coin" id="coin">
+                </div>
+                
+                <div>
+                    <label for="curr">Currency:</label>
+                    <input type="text" name="curr" id="curr">
+                </div>
+
+                <input type="submit" value="Get Price">
+            </form>
+
+            <div class="price-container">
+                <span class="price-label">BTCUSD</span>
+                <h2 class="price">$50000.00</h2>
+            </div>
+
+            
+            
+            <section class="tables">
+                <!-- Coin Table -->
+                <table>
+                    <tr>
+                      <th>Code</th>
+                      <th>Coin</th>
+                    </tr>
+                    <tr>
+                      <td>BTC</td>
+                      <td>Bitcoin</td>
+                    </tr>
+                    <tr>
+                      <td>ETH</td>
+                      <td>Ethereum</td>
+                    </tr>
+                </table>
+
+                <!-- Currency table -->
+                <table>
+                    <tr>
+                      <th>Code</th>
+                      <th>Currency</th>
+                    </tr>
+                    <tr>
+                      <td>USD</td>
+                      <td>US Dollar</td>
+                    </tr>
+                    <tr>
+                      <td>SGD</td>
+                      <td>Singapore Dollar</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <footer>
+                <span>Developed using the Coinbase API.</span>
+                <a href="https://github.com/rawsashimi1604/BitcoinPriceCheck">Github</a>
+            </footer>
+        </div>
+    </main>
 </body>
 </html>
