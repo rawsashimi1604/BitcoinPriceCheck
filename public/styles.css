@@ -55,6 +55,12 @@ header i {
     font-size: 40px;
     color: var(--color-900);
     text-shadow: 0px 0px 15px var(--color-400); 
+
+    transition: 2s;
+}
+
+header i:hover {
+    color: var(--color-300);
 }
 
 
